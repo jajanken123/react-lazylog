@@ -92,9 +92,10 @@ export const searchLines = (rawKeywords, rawLog, isCaseInsensitive) => {
 export const searchLinesProper = (rawKeywords, rawLog, isCaseInsensitive) => {
   const keywords = rawKeywords.split(' ');
   let first = null;
-  for(let i = 0; i < keywords.length; i++){
-    let second = searchLines(keywords[i], rawLog, isCaseInsensitive);
-    if(first === null) {
+  
+  for (let i = 0; i < keywords.length; i += 1) {
+    const second = searchLines(keywords[i], rawLog, isCaseInsensitive);
+    if (first === null) {
       first = second;
     } else {
       first = first.filter(x => second.includes(x));

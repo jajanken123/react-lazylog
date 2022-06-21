@@ -88,3 +88,7 @@ export const searchLines = (rawKeywords, rawLog, isCaseInsensitive) => {
 
   return resultLines;
 };
+
+export const searchLinesProper = (rawKeywords, rawLog, isCaseInsensitive) => {
+  return searchLines(rawKeywords, rawLog, isCaseInsensitive);
+};

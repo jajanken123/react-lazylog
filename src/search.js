@@ -90,8 +90,7 @@ export const searchLines = (rawKeywords, rawLog, isCaseInsensitive) => {
 };
 
 export const searchLinesProper = (rawKeywords, rawLog, isCaseInsensitive) => {
-  let keywords = searchLines(rawKeywords, rawLog, isCaseInsensitive);
-
+  const keywords = searchLines(rawKeywords, rawLog, isCaseInsensitive);
 
   return keywords;
 };

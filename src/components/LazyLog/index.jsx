@@ -28,7 +28,7 @@ import SearchBar from '../SearchBar';
 import request from '../../request';
 import stream from '../../stream';
 import websocket from '../../websocket';
-import { searchLines } from '../../search';
+import { searchLinesProper } from '../../search';
 import { lazyLog, searchMatch } from './index.module.css';
 
 // Setting a hard limit on lines since browsers have trouble with heights
@@ -465,7 +465,7 @@ export default class LazyLog extends Component {
     const currentResultLines =
       !stream && !websocket && keywords === searchKeywords
         ? resultLines
-        : searchLines(keywords, this.encodedLog, caseInsensitive);
+        : searchLinesProper(keywords, this.encodedLog, caseInsensitive);
 
     this.setState(
       {

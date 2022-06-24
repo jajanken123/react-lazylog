@@ -5,6 +5,11 @@ module.exports = {
       targets: {
         browsers: 'ie 9',
       },
+      eslint: {
+        "rules":{
+          "no-console": "off",
+        }
+      },
       style: {
         extract: false,
       }

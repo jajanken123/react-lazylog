@@ -92,6 +92,7 @@ export const searchLines = (rawKeywords, rawLog, isCaseInsensitive) => {
 
 export const searchLinesProper = (rawKeywords, rawLog, isCaseInsensitive) => {
   const keywords = rawKeywords.split(' ');
+
   console.log(keywords);
   let first = null;
 

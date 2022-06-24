@@ -51,6 +51,7 @@ export const searchIndexes = (rawKeywords, rawLog) => {
 };
 
 export const searchLines = (rawKeywords, rawLog, isCaseInsensitive) => {
+  console.log(rawKeywords);
   let keywords = rawKeywords;
   let log = rawLog;
 
@@ -90,7 +91,6 @@ export const searchLines = (rawKeywords, rawLog, isCaseInsensitive) => {
 };
 
 export const searchLinesProper = (rawKeywords, rawLog, isCaseInsensitive) => {
-  console.log(rawKeywords);
   const keywords = rawKeywords.split(' ');
   let first = null;
 

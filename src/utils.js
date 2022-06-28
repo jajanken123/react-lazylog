@@ -130,7 +130,7 @@ export const searchFormatPart = ({
     }
   } else {
     for(let i = 0; i < searchKeyword.length; i+=1){
-      if (part.includes(searchKeyword[i])) {
+      if (searchKeyword[i] !== null && part.includes(searchKeyword[i])) {
         formattedPart = reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
       }
     }

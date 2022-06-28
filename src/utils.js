@@ -124,13 +124,13 @@ export const searchFormatPart = ({
 
   if (caseInsensitive) {
     for (let i = 0; i < searchKeyword.length; i += 1) {
-      if (part.toLowerCase().includes(searchKeyword[i].toLowerCase())) {
+      if (searchKeyword[i] !== "" && part.toLowerCase().includes(searchKeyword[i].toLowerCase())) {
         formattedPart = reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
       }
     }
   } else {
     for (let i = 0; i < searchKeyword.length; i += 1) {
-      if (part.includes(searchKeyword[i])) {
+      if (searchKeyword[i] !== "" && part.includes(searchKeyword[i])) {
         formattedPart = reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
       }
     }

@@ -8,6 +8,8 @@ module.exports = {
       eslint: {
         "rules":{
           "no-console": "off",
+          "prettier/prettier": "off",
+          "max-len": "off",
         }
       },
       style: {

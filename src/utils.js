@@ -125,13 +125,13 @@ export const searchFormatPart = ({
   if (caseInsensitive) {
     for (let i = 0; i < searchKeyword.length; i += 1) {
       if (part.toLowerCase().includes(searchKeyword[i].toLowerCase())) {
-        return reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
+        formattedPart = reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
       }
     }
   } else {
-    for(let i = 0; i < searchKeyword.length; i+=1){
-      if (searchKeyword[i] !== null && part.includes(searchKeyword[i])) {
-        return reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
+    for (let i = 0; i < searchKeyword.length; i += 1) {
+      if (part.includes(searchKeyword[i])) {
+        formattedPart = reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
       }
     }
   }

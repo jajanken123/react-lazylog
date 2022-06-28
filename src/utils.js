@@ -116,18 +116,24 @@ export const searchFormatPart = ({
   replaceJsx,
 }) => part => {
   let formattedPart = part;
-  const searchKeyword = searchKeywords.split(' ')[0];
+  const searchKeyword = searchKeywords.split(' ');
 
   if (nextFormatPart) {
     formattedPart = nextFormatPart(part);
   }
 
   if (caseInsensitive) {
-    if (part.toLowerCase().includes(searchKeyword.toLowerCase())) {
-      return reactStringReplace(formattedPart, searchKeyword, replaceJsx);
+    for(let i = 0; i < searchKeyword.length; i+=1){
+      if (searchKeyword[i] !== null && part.toLowerCase().includes(searchKeyword[i].toLowerCase())) {
+        formattedPart = reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
+      }
     }
-  } else if (part.includes(searchKeyword)) {
-    return reactStringReplace(formattedPart, searchKeyword, replaceJsx);
+  } else {
+    for(let i = 0; i < searchKeyword.length; i+=1){
+      if (part.includes(searchKeyword[i])) {
+        formattedPart = reactStringReplace(formattedPart, searchKeyword[i], replaceJsx);
+      }
+    }
   }
 
   return formattedPart;

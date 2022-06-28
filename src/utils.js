@@ -116,7 +116,7 @@ export const searchFormatPart = ({
   replaceJsx,
 }) => part => {
   let formattedPart = part;
-  let searchKeyword = searchKeywords.split(' ')[0];
+  const searchKeyword = searchKeywords.split(' ')[0];
 
   if (nextFormatPart) {
     formattedPart = nextFormatPart(part);
